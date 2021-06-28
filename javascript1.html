@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quản lí sinh viên</title>
+</head>
+
+<body>
+  <table border="" id="myTable">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th id="fulName">Tên</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr onclick="editRow(this)">
+        <td>4</td>
+        <td> Quỳnh</td>
+        <td>
+          <img id="del" onclick="deleteRow(this)" src="./img/cancel.png" width="20" height="20" alt="" />
+        </td>
+      </tr>
+      <tr onclick="editRow(this)">
+        <td>3</td>
+        <td>Sarah</td>
+        <td>
+          <img id="del" onclick="deleteRow(this)" src="./img/cancel.png" width="20" height="20" alt="" />
+        </td>
+      </tr>
+      <tr onclick="editRow(this)">
+        <td>2</td>
+        <td>Tiên</td>
+        <td>
+          <img id="del" onclick="deleteRow(this)" src="./img/cancel.png" width="20" height="20" alt="" />
+        </td>
+      </tr>
+      <tr onclick="editRow(this)">
+        <td>1</td>
+        <td>Thịnh</td>
+        <td>
+          <img id="del" onclick="deleteRow(this)" src="./img/cancel.png" width="20" height="20" alt="" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <form action="">
+    <input size="15" type="text" id="name" value="" />
+    <input type="button" id="btnAdd" value="Add" onclick="addRow()" />
+    <input type="button" id="btnSort" value="Sort" onclick="sortTable()" />
+  </form>
+   
+  <script>
+    var inputText = document.getElementById('name');
+    var btnAdd = document.getElementById('btnAdd');
+    var btnSort = document.getElementById('btnSort');
+
+    function deleteRow(row) {
+      let rows = row.parentNode.parentNode.rowIndex;
+      document.getElementById("myTable").deleteRow(rows);
+    }
+
+    function addRow() {
+      var x = document.getElementById("myTable");
+      var new_row = x.rows[1].cloneNode(true);
+      var increase = x.rows.length;
+      new_row.cells[0].innerHTML = increase;
+      var content = inputText.value;
+      if (content == '') {
+        alert("nhap can nhap vao o input");
+      }
+      else {
+        new_row.cells[1].innerHTML = content;
+        increase++;
+        x.insertBefore(new_row, x.childNodes[1]);
+        inputText.value = "";
+      }
+    }
+
+    function editRow(row) {
+      inputText.value = row.cells[1].innerHTML;
+      btnAdd.value = "Edit";
+      btnAdd.onclick = function () {
+        row.cells[1].innerHTML = inputText.value;
+        inputText.value = "";
+        btnAdd.value = "Add";
+        btnAdd.onclick = addRow;
+      }
+    }
+
+    function sortTable() {
+      var table, rows, switching, i, x, y, shouldSwitch;
+      table = document.getElementById("myTable");
+      switching = true;
+      while (switching) {
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < rows.length - 1; i++) {
+          shouldSwitch = false;
+          x = rows[i].getElementsByTagName("TD")[1];
+          y = rows[i + 1].getElementsByTagName("TD")[1];
+          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+
+            shouldSwitch = true;
+            break;
+          }
+        }
+        if (shouldSwitch) {
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

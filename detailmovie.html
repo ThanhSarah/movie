@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/axios.css">
+    <title>Detail Movie</title>
+</head>
+
+<body>
+    <form class="user-form" id="form">
+        <input type="text" size="70px" id="text" placeholder="Search movie">
+        <input type="button" id="search" value="Search">
+    </form>
+
+    <main id="main">
+        <div class="content detailContent" >
+            <div class="img detailImg">
+                <img src="https://image.tmdb.org/t/p/w500/fvaB0jrzFXq07bUpox03k6qOAJu.jpg" alt="">
+            </div>
+            <div class="text textDtail">
+                <h1>Batman</h1>
+                <p>thể loại genres, runtime</p>
+                <p class="intro">1998-2020</p>
+                <p>tagline</p>
+                <h2>OverView</h2>
+                <p>"Following a brutal series of murders taking place on Halloween, Thanksgiving, and Christmas, Gotham
+                    City's young vigilante known as the Batman sets out to pursue the mysterious serial killer alongside
+                    police officer James Gordon and district attorney Harvey Dent."</p>
+                <ul>
+                    <li>status</li>
+                    <li>vote_average</li>
+                    <li>vote_count</li>
+                    <li>budget</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/axios.js"></script>
+</body>
+
+</html>

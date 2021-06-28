@@ -1,0 +1,429 @@
+    $mybg:#fff;
+    $mycolor: #333;
+    $mycolor1: #000;
+    $mycolor2:#005ce6 ;
+    $bgcolor:red;
+a{
+    text-decoration: none;
+    color: $mybg;
+}
+*{
+    font-family:'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+span{
+    font-weight:400;
+    font-size: 3rem;
+    display: block;
+}
+h1{
+    color: $mybg;
+    font-size: 5rem;
+    margin: 0;
+}
+h2{
+    color:  $mycolor1;
+    font-size: 3rem;
+}
+h3{
+    font-size: 2rem;
+}
+h4{
+    color: $bgcolor;
+}
+h5{
+    color: #ddd;
+}
+p{
+    color: $mycolor;
+    font-size: 15px;
+}
+hr{
+    height: 7px;
+    width: auto;
+    background-color: $mybg;
+    border:none;
+    margin: 0%;
+    max-width:500px;
+}
+@mixin button{
+    background-color: $bgcolor;
+    color: $mybg;
+    text-align: center;
+    border: 1px solid $bgcolor;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+.nagination{
+    display: flex;
+    flex-flow: row nowrap;
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 20px;
+    justify-content: center;
+    .logo{
+     color: #ddd;
+    font-size: 22px;
+    flex-basis: 70%;
+    padding: auto;
+    }
+    .baricon{
+        text-align: right;
+        flex-basis: 30%;
+        padding-top: 5px; 
+        padding-right: 10px;  
+    }
+}
+.banner{
+    background-image: url('../img/pexels-blue-bird-7218525.jpg');
+    background-repeat: no-repeat;
+    background-size: 1900px 600px;
+    .banner-list {
+        max-width: 1000px;
+        box-sizing: border-box;
+        padding: 100px 20px;
+        margin:  auto;
+    }
+    .icon{
+        display: flex;
+        padding-top: 20px;
+        color: #fff;
+        max-width: 50%;
+        div{
+            flex-basis: 33.33%;
+        } 
+        p{
+            color: $mybg;
+        }
+    }  
+}
+.services{
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #f3f2f2;
+    .services-text{
+        max-width: 1000px;
+        margin: auto;
+    }
+    p{
+        width: 60%;
+        margin:  50px auto;
+        word-wrap: break-word;
+    } 
+    .btn{
+       @include button;
+    }
+}
+.help{
+    display: flex;
+   flex-flow: row wrap;
+   padding: 50px 0;
+   max-width: 840px;
+   margin: auto;
+   .help-img {
+    flex-basis: 50%;
+    box-sizing: border-box;
+    padding: 10px;  
+    img{
+        max-width: 100%;
+    }
+    p{
+        word-wrap: break-word;
+        margin: 25px;
+    }
+    h3{
+        margin-bottom: 0%;
+    }
+    h4{
+        margin-top: 0%;
+        margin-bottom: 40px;
+    }
+    }
+}
+.quality{
+    background: url('../img/pexels-andrea-piacquadio-3818583.jpg') no-repeat;
+    background-size: cover;
+    height: 600px;
+    display: flex;
+    .quality-list{
+        max-width: 1000px;
+        display: flex;
+        margin: auto;
+        align-items: center;
+        justify-content: flex-end;
+    }
+  
+    .quality-text{
+        flex-basis: 50%;
+        h2{
+            color: $mycolor2;
+            font-size: 4.5rem;
+            font-weight: 500;
+            margin: 0%;
+        }
+        hr{
+           background-color: $bgcolor;
+        }
+        p{
+            word-wrap: break-word;
+           
+        }
+    }
+    .btn{
+        @include button;
+    }
+}
+.ourservices{
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+    .container{
+        max-width: 1200px;
+        margin: auto;
+    }
+    .img img{
+        background-color: red;
+        border-radius: 50%;
+    }
+    .ourservices-content{
+        max-width: 1000px;
+        display: flex;
+        justify-content: center;
+        p{
+            word-wrap: break-word;
+            font-style: italic;
+            box-sizing: border-box;
+        }
+        .paint{
+            flex-basis: 33.33%;
+            padding: 5px;
+            box-sizing: border-box;
+            h4{
+                color: $mycolor1;
+                font-size: 20px;
+                word-wrap: break-word;
+            }
+        } 
+
+    }
+   
+    
+}
+.plumbing{
+    padding: 50px 0;
+    background-color: $mycolor2;
+    .plumbing-list{
+        display: flex;
+        align-items: center;
+        max-width: 1000px;
+        margin: auto; 
+        padding: 30px;
+      
+    }
+    .plumbing-text {
+        margin: auto 0;
+        flex-basis: 40%;
+        span {
+            font-size: 5rem;
+        }
+        h5{
+            color:#ddd;
+            margin: 0%;
+        }
+        h1{
+            line-height: 1.2;
+        }
+    }
+
+    .plumbing-img{
+        display: flex;
+        flex-flow: row wrap; 
+        flex-basis: 60%;
+        img{
+            padding: 10px;
+            max-width: 50%;
+        }
+    }
+ 
+}
+.profess{
+    max-width: 1000px;
+    margin: auto;
+    padding: 100px 200px;
+    text-align: center;
+     p{
+        margin-bottom: 40px;
+     }
+     .btn{
+         @include button;
+     }
+     .btn2{
+         @include button;
+         border: 1px solid $mycolor1;
+         color: $mycolor1;
+         background-color: $mybg;
+         padding: 10px 25px;
+         margin-top: 10px;
+     }
+}
+footer{
+    background-color: #333;
+    padding: 30px;
+    display: flex;
+    .footer{
+        text-align: center;
+        margin: auto;
+        max-width: 1000px;
+        
+    }
+    p{
+        color: $mybg;
+      
+    }
+    .intro{
+        padding-top: 30px;
+        a{
+            text-decoration:underline;
+            color: $mycolor2;
+       }
+    }
+    
+}
+
+@media all and (max-width: 1200px) {
+   footer{
+    p{
+        font-size: 13px;
+    }
+    .intro a{
+        font-size: 10px;
+    }
+   }
+    
+}
+
+@media all and (max-width: 992px) {
+    .help{
+        flex-flow: row wrap-reverse;
+        justify-content: center;   
+    }
+    .quality{
+        .quality-text{
+            padding: 15px;
+            h2{
+                font-size: 3.5rem;
+            }
+        }
+    }
+   
+    footer{
+        p{
+            font-size: 10px;
+        }
+        .intro a{
+            font-size: 8px;
+        }
+    }
+   
+}
+@media all and (max-width: 768px) {
+    .help{
+        flex-flow: column-reverse wrap;
+        margin: auto;
+        justify-content: center;
+        align-items: center;  
+        .help-img{
+            max-width: 50%;
+        }
+    }
+    .quality{
+        .quality-list{
+            display:inline;
+            text-align: center;
+            padding: 0 150px;
+        }
+    }
+    
+    .ourservices{
+        max-width: 768px;
+        margin: auto;
+        padding: 0 150px;
+        .ourservices-content{
+            flex-flow: column nowrap;
+        }
+       
+    }
+    .plumbing-list{
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+    .profess{
+        padding: 50px;
+     }
+  
+   
+}
+@media all and (max-width: 576px) {
+    .banner{
+        h1{
+            font-size: 3rem;
+            
+        }
+        span{
+            font-size: 3rem;
+            
+        }
+    }
+    .help{
+        flex-flow: column-reverse wrap;
+        margin: auto;
+        justify-content: center;
+        align-items: center;  
+        .help-img {
+            max-width: 60%;
+        }
+    }
+    .quality{
+        .quality-list{
+            display:inline;
+            text-align: center;
+            padding: 0 50px;
+            h2{
+            font-size: 3.5rem;
+        }
+    }
+   
+    }
+    .ourservices{
+        text-align: center;
+        padding: 0 80px;
+        .ourservices-content{
+            text-align: center;
+           
+        }
+        .img{
+            text-align: center;
+         
+        }
+    }
+    .plumbing{
+        .plumbing-list{
+            flex-flow: column nowrap;
+            align-items: center;  
+    
+        }
+        .plumbing-text{
+            h1{
+                font-size: 3rem;
+                display: inline;
+            }
+            span{
+                font-size: 3rem;
+                display: inline;
+            }
+        }
+    }
+  
+}

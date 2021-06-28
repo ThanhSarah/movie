@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ol id="list" >
+        <li ><span onclick="editLi(this)">Oslo</span><button id="btn">X</button></li>
+        <li><span onclick="editLi(this)">Stockholm</span> <button >X</button></li>
+        <li><span onclick="editLi(this)">Helsinki </span><button >X</button></li>
+        <li><span onclick="editLi(this)">Berlin</span> <button >X</button></li>
+        <li><span onclick="editLi(this)">Rome</span> <button >X</button></li>
+        <li><span onclick="editLi(this)">Madrid</span><button >X</button></li>
+    </ol>
+    <form action="">
+        <input size="15" type="text" id="name" value="" />
+        <input type="button" id="btnAdd" value="Add" onclick="addRow() " />
+        <input type="button" id="btnSort" value="Sort" onclick="sortList()" />
+    </form>
+</body>
+<script>
+    var inputText = document.getElementById("name");
+    var list = document.getElementById("list");
+   
+  function addRow() {
+    let new_now =document.createElement("li");
+        
+        let val = inputText.value;
+        if (val == '') {
+            alert("ban can nhap vao o input");
+        } else {
+            new_now.innerHTML = "<span onclick='editLi(this)'> "+val+"</span>"  + "<button>X</button>";
+            console.log(new_now);
+            list.insertBefore(new_now, list.firstChild);
+            inputText.value = "";
+        }
+    };
+    list.addEventListener('click', function (e) {
+        if (e.target && e.target.nodeName == "BUTTON") {
+            e.target.parentNode.remove();
+        }
+    });
+    function sortList() {
+        var i, switching, b, shouldSwitch;
+        switching = true;
+        while (switching) {
+            switching = false;
+            b = list.getElementsByTagName("LI");
+            for (i = 0; i < (b.length - 1); i++) {
+                shouldSwitch = false;
+                if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+            if (shouldSwitch) {
+                b[i].parentNode.insertBefore(b[i + 1], b[i]);
+                switching = true;
+            }
+        }
+    }
+    
+    function editLi(li) {
+
+            inputText.value = li.innerHTML;
+            btnAdd.value = "Edit";
+            btnAdd.onclick = function () {
+            li.innerHTML = inputText.value;
+            inputText.value = "";
+            btnAdd.value = "Add";
+            btnAdd.onclick = addRow;
+        }
+    }
+    
+ 
+</script>
+
+</html>
